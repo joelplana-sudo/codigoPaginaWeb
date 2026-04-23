@@ -1,0 +1,278 @@
+/*asegura que todos los navegadores quiten espacio extras y conletra arial*/
+/* El asterisco (*) significa "aplica esto a TODOS los elementos de la página" */
+*{
+    font-family: Arial, sans-serif; /* Define la fuente de texto para toda la página */
+    margin: 0;  /* Elimina el espacio exterior que los navegadores agregan por defecto */
+    padding: 0; /* Elimina el espacio interior que los navegadores agregan por defecto */
+    box-sizing: border-box; /* Incluye padding en el tamaño total del elemento */
+}
+
+/* El header es la barra de navegación que aparece en la parte superior */
+.header {
+    position:fixed;   /* Hace que el menú flote SOBRE la imagen sin empujarla */
+    top: 0;    /* Lo pega a la parte superior de la pantalla */
+    left: 0;   /* Lo pega al lado izquierdo de la pantalla */
+    width: 100%;  /* Ocupa todo el ancho de la pantalla */
+    display: flex;       /* Alinea logo, título y menú en una fila */
+    justify-content: space-between; /* Espacia los elementos: izquierda, centro y derecha */
+    align-items: center; /* Centra los elementos verticalmente */
+    height: 12vh;        /* Ocupa el 12% de la altura de la pantalla */
+    color: white;  /* El texto dentro del header será de color blanco */
+    z-index: 1000;       /* Asegura que el menú siempre esté por encima de todo */
+    padding: 0 40px;     /* Espacio a los lados para que no toque los bordes */
+    background-color: rgba(0, 0, 0, 0.856); /* Fondo negro semitransparente (el 0.856 controla la opacidad) */
+}
+
+/* Cambia el cursor cuando el mouse pasa sobre el ícono SVG del menú hamburguesa */
+.header svg{
+    cursor: pointer; /*para que el mause cambie de forma en las tres rayitas de hamburguesa*/
+}
+
+/* Estilos para el logo y título central */
+/* Este contenedor agrupa la imagen del logo y el texto del título juntos */
+.titulo {
+    display: flex;        /* Pone el logo y el título en una fila horizontal */
+    align-items: center;  /* Los alinea verticalmente al centro */
+    gap: 15px;           /* Espacio entre la imagen del logo y el texto H1 */
+}
+/*logo de la pagina*/
+.titulo img {
+    width: 50px;         /* Tamaño del logo */
+    height: auto;        /* Mantiene la proporción */
+}
+/* Estilo del nombre de la tienda en el encabezado */
+.titulo h1 {
+    font-size: 1.5rem;   /* Tamaño del título principal */
+    letter-spacing: 1px; /* Separa un poco las letras entre sí para mejor lectura */
+}
+/*controlador del menu superior  derecho*/
+/* Esta es la lista de enlaces de navegación (Inicio, Catálogo, etc.) */
+.nav-menu .menu  {
+    color: white;
+    display: flex;              /* Pone los elementos del menú en una fila */
+    align-items: center;
+    justify-content: flex-end; /* Los empuja a la derecha como en tu captura */
+    gap: 30px;   /*separacion entre el meno de navegacion*/
+    text-decoration: none;  /* Quita el subrayado de los enlaces */
+    margin: 0;
+    padding: 0;
+    list-style: none;  /* Quita los puntos o números de la lista */
+}
+/*controlador del menu superior derecho*/
+/* Estilo de cada enlace individual dentro del menú */
+.menu a{
+    color: white;           /* Los enlaces son de color blanco */
+    text-decoration: none;  /* Sin subrayado */
+    list-style: none;
+    cursor: pointer;        /* El cursor cambia a manita al pasar sobre el enlace */
+}
+/*contador del carrito de productos*/
+/* Es el numerito rojo que aparece encima del ícono del carrito */
+#contador{
+    background-color: red;   /* Fondo rojo para que se vea el número */
+    padding: 5px;            /* Espacio interior para que el número no quede pegado al borde */
+    color: white;            /* Número en color blanco */
+    border-radius: 50% 50%;  /* Lo convierte en un círculo perfecto */
+}
+
+/* La sección hero es la primera imagen grande que se ve al entrar a la página */
+.hero {
+    /* Fondo con degradado oscuro para que el texto blanco se lea bien */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                      url("./img/imgfondo.jpg");
+    background-size: cover;       /* Ajusta la foto para llenar toda la pantalla */
+    background-position: center;  /* Centra la parte importante de la foto */
+    background-attachment: fixed; /* Efecto: la foto se queda quieta al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita si es más pequeña que la pantalla */
+    height: 100vh;                /* Ocupa el 100% de la altura de la pantalla */
+    width: 100%;
+
+    /* Centrado del contenido (Texto y Botón) */
+    display: flex;
+    flex-direction: column;       /* Pone el texto arriba y el botón abajo */
+    justify-content: flex-end;    /* Empuja todo hacia la parte de abajo de la foto */
+    align-items: center;          /* Centra todo horizontalmente */
+    text-align: center;           /* Centra el texto dentro de su caja */
+    color: white;                 /* Todo el texto de esta sección será blanco */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding-bottom: 120px;        /* Espacio desde el borde inferior */
+    gap: 15px;                    /* Espacio entre el H2, el P y el Botón */
+}
+/*este es el boton de comprar y ver catalogo*/
+.boton-comprar{
+    border-radius: 40px;          /* Bordes muy redondeados, casi una píldora */
+    padding: 10px;                /* Espacio interior del botón */
+    background-color: transparent; /* El botón no tiene color de fondo, se ve el fondo detrás */
+    color: #e4d7d7;               /* Color del texto del botón (blanco rosado) */
+    border: 2px solid white;      /* Borde blanco de 2 píxeles alrededor del botón */
+    cursor: pointer;              /* El cursor cambia a manita al pasar sobre el botón */
+    margin-top: 10px;             /* Separación por encima del botón */
+    height:auto;   /* La altura se ajusta automáticamente al contenido */
+    width:auto;    /* El ancho se ajusta automáticamente al contenido */
+    transition: all 0.15s ease-in; /* Hace que los cambios visuales sean suaves y animados */
+    text-transform: uppercase;    /* Convierte el texto del botón a MAYÚSCULAS automáticamente */
+}
+/* Estilo del enlace que va dentro del botón */
+.boton-comprar a{
+    color: #e4d7d7;          /* El color del enlace igual al del botón */
+    text-decoration: none;   /* Sin subrayado */
+}
+/*boton de ver mas ,pero efecto de resaltar*/
+/* Esto se activa cuando el mouse pasa por encima del botón */
+.boton-comprar:hover{
+    background-color: black;  /* El fondo del botón cambia a negro */
+    color: white;             /* El texto cambia a blanco puro */
+    transform: scale(1.1);    /* El botón crece un 10% de su tamaño original */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Agrega una sombra debajo del botón */
+}
+/* Esto se activa cuando el usuario hace clic en el botón */
+.boton-comprar:active{
+    background-color: red;    /* El fondo cambia a rojo al hacer clic */
+    transform: scale(0.95);   /* El botón se encoge un poco, simulando que fue presionado */
+}
+/* Estilo general de la sección marcas */
+/* Esta es la sección donde se muestran los productos con fondo de imagen */
+.seccion-marcas {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.747)), 
+                      url("./img/imagenfondo2.jpeg");
+    background-repeat: no-repeat;   /* La imagen no se repite */
+    background-position: center;    /* La imagen se centra en la sección */
+    background-size: cover;         /* La imagen cubre toda la sección */
+    background-attachment: fixed;   /* La imagen queda fija al hacer scroll */
+    height: auto;      /* La altura se adapta al contenido que tenga adentro */
+    width: 100%;       /* Ocupa todo el ancho de la pantalla */
+    text-align: center; /* El texto queda centrado */
+    padding: 30px;      /* Espacio interior para que el contenido no toque los bordes */
+    color: white;       /* El texto dentro de esta sección será blanco */
+}
+/*contenedor principal que este arriba del fondo de imagen*/
+/* Grid es como una cuadrícula, divide el espacio en columnas y filas para ordenar las tarjetas */
+.contenidos-productos{               
+    display: grid;               /* Activa el modo de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas del mismo tamaño */
+    gap: 10px;          /* Espacio entre cada tarjeta de producto */
+    width: 100%;
+    margin-top: 20px;   /* Separación entre el título de la sección y las tarjetas */
+    justify-items: center; /* Centra cada tarjeta dentro de su columna */
+    align-items: center;   /* Centra las tarjetas verticalmente */
+}
+/*tarjeta producto donde esta cada foto de la camiseta*/
+/* Cada tarjeta es una caja que contiene la imagen, nombre y precio del producto */
+.producto{
+    border-radius: 20px;  /* Esquinas redondeadas para la tarjeta */
+    height: 450px;        /* Altura fija de la tarjeta */
+    width: 300px;         /* Ancho fijo de la tarjeta */
+    padding: 10px;        /* Espacio interior para que el contenido no toque los bordes */
+    display: flex;
+    flex-direction: column; /* Apila imagen, nombre y precio en columna */
+    align-items: center;    /* Centra el contenido horizontalmente */
+    transition: all 0.15s ease-in;   /* Hace que el efecto hover sea suave */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco muy transparente sobre la imagen de fondo */
+    backdrop-filter: blur(5px);
+     /* Agrega un efecto de desenfoque al fondo para mejorar la legibilidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega una sombra para dar profundidad */
+}
+/*el color de las letras de cada marca o titulo de cada marca*/
+.producto a{
+    color: white; /* El nombre del producto (enlace) se ve en blanco */
+}
+/*añadir al carrito el boton de añadir al carrito*/
+.boton{
+    cursor: pointer;          /* El cursor cambia a manita */
+    border-radius: 10px 10px; /* Esquinas superiores redondeadas */
+    padding: 10px 20px;       /* Espacio interior: 10px arriba/abajo, 20px a los lados */
+    border: none;             /* Sin borde visible */
+    transition: all 0.15s ease-in; /* Animación suave al hacer hover */
+}
+/*esto es lo que hace que el boton pase de blanco a negro con el cursor*/
+/* Efecto al pasar el mouse por encima del botón de agregar al carrito */
+.boton:hover{
+    background-color: red;  /* El fondo del botón cambia a rojo */
+    color: white;           /* El texto cambia a blanco */
+}
+/* Efecto al hacer clic en el botón de agregar al carrito */
+.boton:active{
+    background-color: darkred; /* El fondo se pone rojo oscuro al hacer clic */
+    transform: scale(0.95);    /* El botón se encoge levemente simulando que fue presionado */
+}
+/*es donde esta el precio y el añadir al carrito*/
+/* Contenedor que organiza el precio y el botón en una fila horizontal */
+.compra-btn{
+    display: flex;              /* Pone precio y botón en una fila */
+    padding: 6px;
+    margin-top: auto;           /* Empuja este contenedor hacia la parte inferior de la tarjeta */
+    width: 100%;                /* Ocupa todo el ancho de la tarjeta */
+    gap: 20px;                  /* Espacio entre el precio y el botón */
+    justify-content: space-evenly; /* Distribuye el espacio de forma uniforme */
+    align-items: center;           /* Centra verticalmente el precio y el botón */
+}
+/*esto es la caja completa donde esta la imagen que hace que cambien de color a blanco cuando pasa el cursor*/
+/* Cuando el mouse pasa sobre la tarjeta, el fondo cambia a blanco */
+.producto:hover{
+    background-color: rgb(255, 255, 255); /* Fondo blanco sólido al hacer hover */
+    color: black;  /* El texto cambia a negro para que se lea sobre el fondo blanco */
+}
+/*para revisar este es solo de clemont por ahora el efecto la palabra cambia a color negro*/
+/* Cuando la tarjeta tiene hover, el enlace del nombre también cambia a negro */
+.producto a:hover{
+    color: black;
+}
+/*es el titulo de la marca de cada imagen*/
+.producto h3{
+    padding: 10px 10px; /* Espacio alrededor del nombre del producto */
+}
+/*caja que modifica la imagen*/
+/* Controla el tamaño y forma de la imagen dentro de cada tarjeta */
+.producto img{
+    width: 100%;          /* La imagen ocupa todo el ancho de la tarjeta */
+    height: 300px;        /* Altura fija para que todas las imágenes sean iguales */
+    border-radius: 20px 20px; /* Solo las esquinas superiores son redondeadas */
+}
+/*es el piso de la pagina lo ultimo*/
+/* El footer o pie de página que aparece al final de la página */
+.piso{
+    background-color:rgb(56, 0, 0); /* Fondo rojo oscuro casi negro */
+    display: flex;               /* Organiza las columnas del footer en una fila */
+    align-content: center;
+    justify-content: space-around; /* Distribuye el espacio entre las columnas */
+    color: white;
+    font-size: 1rem;
+    padding: 30px;    /* Espacio interior para que el contenido no toque los bordes */
+    gap: 20px;        /* Espacio entre las columnas del footer */
+    position: relative; /* Necesario para posicionar el copyright con position absolute */
+    height: 250px;      /* Altura fija del footer */
+}
+/*aqui se le dan color y forma a las letras del piso*/
+/* Aplica estilos a listas, items de lista y enlaces dentro del footer */
+.piso ul, .piso li, .piso a{
+    text-decoration: none;         /* Sin subrayado en los enlaces */
+    list-style: none;              /* Sin puntos ni números en las listas */
+    color: rgb(109, 107, 107);     /* Color gris para el texto del footer */
+    cursor: pointer;               /* El cursor cambia a manita */
+    margin: 10px 0;                /* Separación vertical entre cada elemento de la lista */
+}
+/*esto es la firma del que hace la pagina*/
+/* La barra de copyright que aparece en la parte más baja del footer */
+.copy{
+    width: 100%;
+    position: absolute; /* Se posiciona respecto al footer (que tiene position relative) */
+    bottom: 0;          /* Se pega al fondo del footer */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea separadora semitransparente arriba */
+    padding: 20px;      /* Espacio interior para que el texto no quede pegado al borde */
+    text-align: center; /* Centra el texto del copyright */
+}
+/*aqui estoy solo centrando la lista de palabras del piso (ayuda,redes.soporte,saber mas )*/
+.soporte h3{
+    text-align: center; /* Centra el título de cada columna del footer */
+}
+/*espacio solo para redes*/
+/* Contenedor de los íconos de redes sociales en el footer */
+.redes{
+    list-style: none;   /* Sin puntos de lista */
+    display: flex;      /* Pone los íconos en una fila horizontal */
+    align-items: center;
+    justify-content: space-evenly; /* Distribuye los íconos con espacio uniforme */
+    gap: 20px;          /* Espacio entre cada ícono de red social */
+    text-align: center;
+    padding: 20px;
+}   
