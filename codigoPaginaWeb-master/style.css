@@ -74,17 +74,27 @@
     color: white;            /* Número en color blanco */
     border-radius: 50% 50%;  /* Lo convierte en un círculo perfecto */
 }
+#lista_carrito{
+    width: 100%;
+    padding: 20px;
+}
+#lista_carrito tr{
+    justify-content: space-around;
+    display: flex;
+    gap: 20px;
+    padding: 5px;
+    align-items:center;
+    border-bottom: 1px black solid;
+    width: 100%;
+}
 .container_tabla{
+    justify-content: space-between;
     width: auto;
     height: auto;
-    display: flex;
-    align-items: center;
     background-color: white; /* Fondo blanco muy transparente sobre la imagen de fondo */
     z-index: 1000; /* Asegura que la tabla esté por encima de la imagen de fondo pero debajo del header */
-    padding: 20px; /* Espacio interior para que el contenido no toque los bordes */
-    position: absolute; /* Permite posicionar la tabla sobre la imagen de fondo */
+    position: fixed; /* Permite posicionar la tabla sobre la imagen de fondo */
     top: 10%;
-    gap: 20px; /* Espacio entre las filas de la tabla */
     right: 0;
 }
 
