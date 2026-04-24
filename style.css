@@ -74,6 +74,20 @@
     color: white;            /* Número en color blanco */
     border-radius: 50% 50%;  /* Lo convierte en un círculo perfecto */
 }
+.container_tabla{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    background-color: white; /* Fondo blanco muy transparente sobre la imagen de fondo */
+    z-index: 1000; /* Asegura que la tabla esté por encima de la imagen de fondo pero debajo del header */
+    padding: 20px; /* Espacio interior para que el contenido no toque los bordes */
+    position: absolute; /* Permite posicionar la tabla sobre la imagen de fondo */
+    top: 10%;
+    gap: 20px; /* Espacio entre las filas de la tabla */
+    right: 0;
+}
+
 
 /* La sección hero es la primera imagen grande que se ve al entrar a la página */
 .hero {

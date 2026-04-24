@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded',(e)=>{
     const contenedorCarrito = document.querySelector('.carrito_compra')
     const carrito_contador=document.querySelector('#contador');
     const carrito=document.querySelector('.carrito_compra');
+
     let totalCarrito=[];
     const botones=document.querySelectorAll('.boton');
     console.log(botones);
@@ -48,14 +49,22 @@ document.addEventListener('DOMContentLoaded',(e)=>{
                 img: producto.querySelector('img').src,
                 titulo: producto.querySelector('h3').textContent,
                 id: producto.querySelector('.boton').getAttribute('data-id'),
-                precio:producto.querySelector('').textContent
+                precio:producto.querySelector('.precio-producto').textContent
             }
              //  Retornamos el objeto para usarlo en el clic
         return infoproducto;
         }
     })
-
 })
+
+
+
+
+
+
+
+
+
 /*document.addEventListener('DOMContentLoaded', () => {
     // IMPORTANTE: El punto (.) indica que es una clase CSS
     const contenedorCarrito = document.querySelector('.carrito_compra');
